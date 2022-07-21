@@ -24,14 +24,17 @@ public class regsitration1 {
 		Driver.findElement(By.id("input_0")).sendKeys("dishant.patil@testriq.com");
 		Driver.findElement(By.name("password")).sendKeys("Sid*141#");
 		Driver.findElement(By.xpath("//body/ui-view[1]/team-builder[1]/div[1]/ui-view[1]/team-builder-login[1]/div[1]/div[1]/form[1]/div[3]/button[1]")).click();
-//		Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		WebElement Element= Driver.findElement(By.id("select_3"));
+		Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		WebElement Element= Driver.findElement(By.cssSelector("#select_5"));
 		
 		((JavascriptExecutor)Driver).executeScript("arguments[0].scrollIntoView(true);", Element);
 //
-//		Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		Select Team=new Select(Driver.findElement(By.id("select_3")));
-		Team.selectByVisibleText("Standard");
+		Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		Driver.findElement(By.cssSelector("#select_5")).click();
+		Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		Driver.findElement(By.className("ng-scope md-ink-ripple")).click();
+		Select drpteam=new Select(Driver.findElement(By.cssSelector("#select_5")));
+		drpteam.selectByValue("Standard");
 		Driver.findElement(By.xpath("//body/ui-view[1]/team-builder[1]/div[1]/ui-view[1]/team-builder-registration[1]/ui-view[1]/team-builder-registration-captain[1]/div[1]/ui-view[1]/team-builder-registration-captain-info[1]/div[1]/div[1]/form[1]/div[2]/button[1]")).click();
 		Driver.findElement(By.id("input_398")).sendKeys("cred");
 		Driver.findElement(By.xpath("//body/ui-view[1]/team-builder[1]/div[1]/ui-view[1]/team-builder-registration[1]/ui-view[1]/team-builder-registration-captain[1]/div[1]/ui-view[1]/team-builder-registration-captain-payment[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[2]/md-input-container[1]")).sendKeys("4111 1111 1111 1111");
